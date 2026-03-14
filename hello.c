@@ -80,16 +80,6 @@ rtems_task Init(rtems_task_argument ignored)
 #ifdef HEAP_PROTECTION
     print_delayed();
 #endif
-
-    void* a =  malloc(1024*1024*1024);
-    _Heap_Protection_free_all_delayed_blocks( RTEMS_Malloc_Heap );
-#ifdef HEAP_PROTECTION
-    print_delayed();
-#endif
-
-    Heap_Information_block check;
-    malloc_info(&check);
-    print_info(&check);
     exit(0);
 }
 
